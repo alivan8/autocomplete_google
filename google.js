@@ -1,9 +1,11 @@
 import React from 'react';
-import { Image, Text } from 'react-native';
+import { Image, Text,button } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { useAlert } from 'react-alert'
 
 
 const GooglePlacesInput = () => {
+  const alert = useAlert()
   return (
     <GooglePlacesAutocomplete
       placeholder='Search'
@@ -16,6 +18,13 @@ const GooglePlacesInput = () => {
       renderDescription={row => row.description} // custom description render
       onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
         console.log(data, details);
+        <button
+      onClick={() => {
+        alert.show('Oh look, an alert!')
+      }}
+        >
+      Show Alert
+    </button>
       }}
 
       getDefaultValue={() => ''}
