@@ -1,5 +1,5 @@
-import React,{component} from 'react';
-import { Image, Text,button } from 'react-native';
+import React,{Component} from 'react';
+import { Image, Text,button,View } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { useAlert } from 'react-alert'
 
@@ -7,7 +7,7 @@ export default class GooglePlacesInput extends Component {
 
     render() {
         return (
-     <view>
+     
     <GooglePlacesAutocomplete
       placeholder='Search'
       minLength={2} // minimum length of text to search
@@ -72,7 +72,7 @@ export default class GooglePlacesInput extends Component {
 
      
     />
-    </view>
+  
 
         );
     }
