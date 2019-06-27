@@ -3,7 +3,16 @@ import { Image, Text,button,View } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { useAlert } from 'react-alert'
 
+
 export default class GooglePlacesInput extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = ({
+      latitude :'',
+      longitude:''
+    })
+  }
 
     render() {
         return (
@@ -18,14 +27,15 @@ export default class GooglePlacesInput extends Component {
       fetchDetails={true}
       renderDescription={row => row.description} // custom description render
       onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
-        console.log(data, details);
-        <button
-      onClick={() => {
-        alert.show('Oh look, an alert!')
-      }}
-        >
-      Show Alert
-    </button>
+      
+      this.setState({
+        latitude: details.geometry.location.lat,
+        longitude: details.geometry.location.lng, latitudeDelta: 0.3, longitudeDelta: 0.3
+        
+    });
+       
+       
+       
       }}
 
       getDefaultValue={() => ''}
@@ -33,8 +43,8 @@ export default class GooglePlacesInput extends Component {
       query={{
         // available options: https://developers.google.com/places/web-service/autocomplete
         key: 'AIzaSyCYaYM1r-MkW40b6oqSARN3tbCC486IPUQ',
-        language: 'en', // language of the results
-        types: '(cities)' // default: 'geocode'
+        language: 'es', // language of the results
+        types: '(address)' // default: 'geocode'
       }}
 
       styles={{
