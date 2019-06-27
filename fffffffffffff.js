@@ -7,7 +7,23 @@ export default class GooglePlacesInput extends Component {
 
     render() {
         return (
-     <view>
+            <div className="class-name">
+                content
+            </div>
+        );
+    }
+}
+
+
+
+
+
+
+
+
+const GooglePlacesInput = () => {
+  const alert = useAlert()
+  return (
     <GooglePlacesAutocomplete
       placeholder='Search'
       minLength={2} // minimum length of text to search
@@ -72,15 +88,7 @@ export default class GooglePlacesInput extends Component {
 
      
     />
-    </view>
-
-        );
-    }
+  );
 }
 
-
-
-
-
-
-
+export default GooglePlacesInput
