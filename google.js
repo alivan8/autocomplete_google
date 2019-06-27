@@ -4,6 +4,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { useAlert } from 'react-alert'
 
 
+
 export default class GooglePlacesInput extends Component {
 
   constructor(props){
@@ -32,7 +33,8 @@ export default class GooglePlacesInput extends Component {
         latitude: details.geometry.location.lat,
         longitude: details.geometry.location.lng, latitudeDelta: 0.3, longitudeDelta: 0.3
         
-    });
+      });
+      
        
        
        
@@ -44,7 +46,7 @@ export default class GooglePlacesInput extends Component {
         // available options: https://developers.google.com/places/web-service/autocomplete
         key: 'AIzaSyCYaYM1r-MkW40b6oqSARN3tbCC486IPUQ',
         language: 'es', // language of the results
-        types: '(address)' // default: 'geocode'
+        types: 'address' // default: 'geocode'
       }}
 
       styles={{
